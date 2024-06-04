@@ -1,0 +1,245 @@
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    background: whitesmoke;
+    background-image: url('./img/nightsky.jpg');
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background-size: cover;
+    color: aliceblue;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./img/nightsky.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+#overlay.fade-out {
+    animation: fadeOut 10s forwards;
+}
+
+#enter-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#enter-button img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+    animation: Glow , 2s ,infinite;
+}
+
+@keyframes Glow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 25px #fff, 0 0 30px #fff, 0 0 35px #fff;
+    }
+    100% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+    }
+}
+
+#enter-button img:hover {
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
+}
+
+header {
+    background-color: cadetblue;
+    padding: 20px;
+    animation: slideDown 1s forwards;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    margin: 0;
+    color:chocolate;
+    animation: textGlow 2s infinite;
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 25px #fff, 0 0 30px #fff, 0 0 35px #fff;
+    }
+    100% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+    }
+}
+
+main {
+    padding: 20px;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#message-section, #gallery-section, #wishes-section {
+    margin-top: 50px;
+}
+
+#message-container {
+    font-size: 24px;
+    color:chocolate;
+    animation: fadeIn 2s;
+}
+
+#gallery-section h2, #wishes-section h2 {
+    color: chocolate;
+    margin: 20px 0;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.row-gallery {
+    display: flex;
+    margin: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.quotes {
+    color: beige;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-lg-6 {
+    flex: 1;
+    max-width: 50%;
+}
+.gallery image{
+    width: fit-content;
+    height: fit-content;
+}
+.gallery-photo {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+.gallery-photo1 {
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+.gallery-photo:hover {
+    transform: scale(1.1);
+}
+@media (max-width: 600px) {
+    body {
+        font-size: 18px;
+        background-image:url("./img/nightsky.jpg");
+        background-size: contain;
+    }
+
+    #enter-button img {
+        width: 100px;
+        height: 100px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .quotes, .gallery-photo {
+        font-size: 16px;
+    }
+
+    .row-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col-lg-6 {
+        max-width: 100%;
+    }
+
+    .gallery-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .gallery-photo1 {
+        padding: 10px;
+        width: 100%;
+        height:100%;
+    }
+
+    #message-container  {
+        width: 100%;
+        height: auto;
+    }
+    .gallery{
+        width: auto;
+        height: auto;
+    }
+}
