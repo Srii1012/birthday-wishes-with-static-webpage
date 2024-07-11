@@ -1,2 +1,1 @@
-# srivathsan
-none
+brithday wishes with static webpage 
